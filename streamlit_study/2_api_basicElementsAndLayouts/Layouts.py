@@ -174,3 +174,12 @@ with st.container():
     st.write(f'You entered: {user_input}')
     
 
+
+st.header('Empty')
+placeholder = st.empty()
+for i in range(10):
+    placeholder.write(f'This message will be displayed in {10-i} seconds')
+    time.sleep(.3)
+placeholder.empty()
+
+
