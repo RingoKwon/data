@@ -48,7 +48,7 @@ with col3:
 st.header('Expander')
 
 with st.expander('Some Explanation'):
-    st.write('''
+    st.markdown('''
 HTML을 PDF로 변환하는 방법으로 Streamlit 페이지를 PDF로 만들 수 있습니다. 여기에 사용할 수 있는 예시 코드를 보여드리겠습니다:
 
 ## code 
@@ -144,4 +144,33 @@ pip install streamlit pdfkit
 
 추가로 필요한 기능이나 수정하고 싶은 부분이 있으시다면 말씀해 주세요!
 ''')
+
+st.subheader('Columns Example')
+
+col2_1 , col2_2 = st.columns(2)
+with col2_1:
+    st.write('col1')
+
+with col2_2:
+    st.markdown("col2 \n\n If the background color is not applying as expected, it might be due to the way Streamlit handles CSS or the specific structure of your code. Let's ensure that the CSS is correctly applied to the container. Here’s an updated approach:")
+    col2_2_1 , col2_2_2 = st.columns(2)
+    with col2_2_1:
+        st.markdown("col2_2_1 \n\n If the background color is not applying as expected, it might be due to the way Streamlit handles CSS or the specific structure of your code. Let's ensure that the CSS is correctly applied to the container. Here’s an updated approach:")
+
+    with col2_2_2:
+        st.write('col2_2_2')
+
+
+
+st.header('Container Example')
+
+# 컨테이너를 활용하여 여러 위젯을 그룹화
+with st.container():
+    st.header('Container Example with Features')
+    
+    # 첫 번째 섹션: 사용자 입력
+    st.subheader('User Input Section')
+    user_input = st.text_input('Enter some text:')
+    st.write(f'You entered: {user_input}')
+    
 
