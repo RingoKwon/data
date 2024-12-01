@@ -2,6 +2,7 @@ from tarfile import data_filter
 import streamlit as st 
 import pandas as pd 
 import numpy as np 
+import time 
 
 
 
@@ -70,6 +71,34 @@ json_var = df1.head(5).to_dict()
 st.json(json_var, expanded=False)
 
 
+st.header("Status Element")
+st.subheader('Progress Bar')
 
+# Create two containers
+progress_container = st.container()
+content_container = st.container()
+st.write('test2')
+
+
+
+
+
+
+
+
+# Display content in the lower container first
+with content_container:
+    st.write('test')
+    st.write('다른 내용들도 여기에 추가할 수 있습니다')
+
+# Run the progress bar in the upper container
+def progress_bar() :
+    for i in range(101): 
+        my_bar.progress(i)
+        time.sleep(0.05)
+with progress_container:
+    with st.spinner('Processing'):
+        my_bar = st.progress(0)
+        progress_bar()
 
 
