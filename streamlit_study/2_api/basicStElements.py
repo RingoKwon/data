@@ -3,6 +3,9 @@ import pandas as pd
 import numpy as np 
 
 
+
+
+
 st.title("title")
 st.caption("explain caption ")
 st.header("header")
@@ -51,4 +54,12 @@ a+ar +a r^3 +\cdots + a r^{n-1} = \sum_{k=1}^{n-1} a r^k
 
 st.subheader('LaTex')
 st.latex(formula)
+
+st.header('data')
+st.subheader('DataFrame')
+
+df1 = pd.read_csv('tips.csv')
+st.dataframe(df1)
+
+
 
