@@ -1,3 +1,4 @@
+from tarfile import data_filter
 import streamlit as st 
 import pandas as pd 
 import numpy as np 
@@ -59,7 +60,16 @@ st.header('data')
 st.subheader('DataFrame')
 
 df1 = pd.read_csv('tips.csv')
-st.dataframe(df1)
+st.dataframe(data = df1 , width = 1000, height=150)
+
+st.subheader("static tatble")
+st.table(data=df1.head(5))
+
+st.subheader('JSON')
+json_var = df1.head(5).to_dict()
+st.json(json_var, expanded=False)
+
+
 
 
 
