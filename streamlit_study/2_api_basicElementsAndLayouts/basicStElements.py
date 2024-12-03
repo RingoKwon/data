@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd 
 import numpy as np 
 import time 
+import os
 
 
 
@@ -53,6 +54,11 @@ st.code(body, language='python')
 formula = """
 a+ar +a r^3 +\cdots + a r^{n-1} = \sum_{k=1}^{n-1} a r^k
 """
+# 현재 작업 디렉토리 출력
+st.write("Current Directory:", os.getcwd())
+
+image_path = "./streamlit_study/2_api_basicElementsAndLayouts/media/image.jpg"
+st.write("Image exists:", os.path.exists(image_path))
 
 st.subheader('LaTex')
 st.latex(formula)
@@ -60,7 +66,7 @@ st.latex(formula)
 st.header('data')
 st.subheader('DataFrame')
 
-df1 = pd.read_csv('tips.csv')
+df1 = pd.read_csv('./streamlit_study/2_api_basicElementsAndLayouts/tips.csv')
 st.dataframe(data = df1 , width = 1000, height=150)
 
 st.subheader("static tatble")
@@ -86,14 +92,14 @@ st.error('error')
 
 
 st.header('Media Elements')
-st.image("./media/image.jpg", caption='city', width=500)
+st.image("./streamlit_study/2_api_basicElementsAndLayouts/media/image.jpg", caption='city', width=500)
 
-video_open = open('./media/waterfalls.mp4', 'rb')
+video_open = open('./streamlit_study/2_api_basicElementsAndLayouts/media/waterfalls.mp4', 'rb')
 video_bytes = video_open.read()
 
 st.video(video_bytes )
 
-audio_file = open('./media/audio.mp3', 'rb')
+audio_file = open('./streamlit_study/2_api_basicElementsAndLayouts/media/audio.mp3', 'rb')
 audio_bytes = audio_file.read()
 
 st.audio(audio_bytes)
@@ -121,5 +127,7 @@ with progress_container:
 
     st.write(' ### run after progress bar ' ) 
     # st.balloons()
+
+
 
 
