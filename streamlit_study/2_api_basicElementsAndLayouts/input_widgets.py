@@ -70,3 +70,24 @@ with st.container():
                                 'option2', 
                                 'option3'])
     st.write(f'Selected: ',multiselect)
+
+# slider
+st.markdown('---')
+st.header('slider') 
+
+slider = st.slider('select', 0, 10000, 1000, 100)
+st.write(f'Selected: `{slider}`')
+
+# text input 
+st.markdown('---')
+st.header('text input')
+
+text = st.text_input('input text')
+st.write(f'Input text: `{text}`')
+
+# number input 
+st.markdown('---')
+st.header('number input')
+
+number = st.number_input('input number', 0, 10000, 1000, 100)
+st.write(f'Input number: `{number}`')
