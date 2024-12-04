@@ -91,3 +91,30 @@ st.header('number input')
 
 number = st.number_input('input number', 0, 10000, 1000, 100)
 st.write(f'Input number: `{number}`')
+
+# text area 
+st.markdown('---')
+st.header('text area')
+
+text_area = st.text_area('input text area')
+st.write(f'Input text area: `{text_area}`')
+
+# date input 
+st.markdown('---')
+st.header('date input')
+
+date = st.date_input('select date')
+st.write(f'Selected date: `{date}`')
+
+#  file uploader 
+st.markdown('---')
+st.header('file uploader')
+
+
+uploaded_file = st.file_uploader('upload file')
+save_button = st.button('save')
+
+if save_button:
+    if uploaded_file is not None:
+        with open(os.path.join("./saved_file", uploaded_file.filename), mode='wb') as f:
+            f.write(uploaded_file.getvalue())
