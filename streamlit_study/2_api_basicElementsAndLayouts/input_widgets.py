@@ -53,4 +53,20 @@ st.subheader('single radio')
 radio = st.radio('select', ['option1', 'option2', 'option3'])
 st.markdown(f'Selected: `{radio}`')
 
+# selectbox
+st.markdown('---')
+st.header('selectbox')
+st.subheader('single selectbox')
 
+selectbox = st.selectbox('select', ['option1', 'option2', 'option3'])
+st.write(f'Selected: `{selectbox}`')
+
+st.subheader('multiple selectbox')
+
+with st.container():
+    st.info('multiple selectbox')
+    multiselect = st.multiselect('selectbox1',
+                               ['option1',
+                                'option2', 
+                                'option3'])
+    st.write(f'Selected: ',multiselect)
