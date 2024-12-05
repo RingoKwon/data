@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import os 
 
-data = pd.read_csv('tips.csv')
+data = pd.read_csv('./streamlit_study/2_api_basicElementsAndLayouts/tips.csv')
 
 def sample_function(df):
     return df.sample(5)
